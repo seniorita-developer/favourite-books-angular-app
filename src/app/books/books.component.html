@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6">
+
+      <h2>My books</h2>
+      <ul class="books">
+        <li *ngFor="let book of books" [class.selected]="book === selectedBook" (click)="onSelect(book)">
+          <div><span class="badge">{{book.title | uppercase}} </span> by <span>{{book.author}}</span></div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-lg-6">
+      <app-book-details [book]="selectedBook"></app-book-details>
+    </div>
