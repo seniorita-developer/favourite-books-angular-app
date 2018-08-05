@@ -1,13 +1,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BooksComponent } from './books/books.component';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookService } from './book.service';
 import { AppRoutingModule } from './/app-routing.module';
-import { NavbarComponent } from './navbar/navbar.component';
+import { AddBookComponent } from './add-book/add-book.component';
 
 
 @NgModule({
@@ -15,12 +17,14 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppComponent,
     BooksComponent,
     BookDetailsComponent,
-    NavbarComponent
+    AddBookComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [BookService],
   bootstrap: [AppComponent]
