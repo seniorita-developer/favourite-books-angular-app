@@ -1,0 +1,38 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      {{ title }}
+    </div>
+
+    <div class="panel-body">
+      <form [formGroup]="addForm">
+        <div class="form-group">
+          <label class="col-md-4">Title</label>
+          <input type="text" class="form-control" formControlName="title" #title />
+        </div>
+        
+        <div class="form-group">
+          <label class="col-md-4">Author</label>
+          <input type="text" class="form-control" formControlName="author" #author/>
+        </div>
+        
+          <div class="form-group">
+          <label class="col-md-4">Year</label>
+          <input type="text" class="form-control" formControlName="year" #year/>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4">Genre</label>
+          <input type="text" class="form-control" formControlName="genre" #genre/>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4">Review</label>
+          <input type="text" class="form-control" formControlName="review" #review/>
+        </div>
+          <div class="form-group">
+      <button routerLink="/home">Back</button>&nbsp;
+      <button type="submit" (click)="addBook(title.value, author.value, year.value, genre.value, review.value)" [disabled]="createForm.pristine || createForm.invalid">Save</button>
+          </div>
+  </form>
+  </div>
+</div>
