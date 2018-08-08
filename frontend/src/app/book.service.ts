@@ -27,4 +27,8 @@ export class BookService {
     return this.http.post(`${this.uri}/books/add`, book);
   }
 
+  deleteBook(id) {
+    return this.http.get(`${this.uri}/books/delete/${id}`);
+  }
+
 }

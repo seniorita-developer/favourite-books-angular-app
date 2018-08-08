@@ -4,8 +4,9 @@
 
       <h2>My books</h2>
       <ul class="books">
-        <li *ngFor="let book of books" [class.selected]="book === selectedBook" (click)="onSelect(book)">
-          <div><span class="badge">{{book.title | uppercase}} </span> by <span>{{book.author}}</span></div>
+        <li *ngFor="let book of books" [class.selected]="book === selectedBook" >
+          <div (click)="onSelect(book)"><span class="badge">{{book.title | uppercase}} </span> by <span>{{book.author}}</span></div>
+          <button (click)="deleteBook(book._id)">Delete</button>
         </li>
       </ul>
     </div>

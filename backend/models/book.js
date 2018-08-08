@@ -9,15 +9,14 @@ let Book = new Schema({
     author: {
         type: String
     },
-    Year: {
+    year: {
         type: Number
     },
-    Genre: {
+    genre: {
         type: String
     },
-    Review: {
-        type: String,
-        default: 'Unrated'
+    review: {
+        type: String
     }
 });
 

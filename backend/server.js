@@ -38,5 +38,14 @@ router.route('/books/add').post((req, res) => {
         });
 });
 
+router.route('/books/delete/:id').get((req, res) => {
+    Book.findByIdAndRemove({_id: req.params.id}, (err, book) => {
+        if (err)
+            res.json(err);
+        else
+            res.json('Remove successfully');
+    })
+})
+
 app.use('/', router);
 app.listen(4000, () => console.log('Express server on port 4000'));
