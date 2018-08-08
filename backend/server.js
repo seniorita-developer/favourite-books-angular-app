@@ -47,5 +47,25 @@ router.route('/books/delete/:id').get((req, res) => {
     })
 })
 
+router.route('/books/update/:id').post((req, res) => {
+    Book.findById(req.params.id, (err, book) => {
+        if (!book)
+            return next(new Error('Could not load document'));
+        else {
+            book.title = req.body.title;
+            book.author = req.body.author;
+            book.year = req.body.year;
+            book.genre = req.body.genre;
+            book.review = req.body.review;
+
+            book.save().then(book => {
+                res.json('Update done');
+            }).catch(err => {
+                res.status(400).send('Update failed');
+            });
+        }
+    });
+});
+
 app.use('/', router);
 app.listen(4000, () => console.log('Express server on port 4000'));

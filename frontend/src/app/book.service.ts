@@ -14,6 +14,10 @@ export class BookService {
   getBooks() {
     return this.http.get(`${this.uri}/books`);
   };
+
+  getBookById(id) {
+    return this.http.get(`${this.uri}/books/${id}`);
+  }
   
   addBook(title, author, year, genre, review) {
     const book = {
@@ -22,9 +26,19 @@ export class BookService {
       year: year,
       genre: genre,
       review: review
-
     };
     return this.http.post(`${this.uri}/books/add`, book);
+  }
+
+  updateBook(id, title, author, year, genre, review) {
+    const book = {
+      title: title,
+      author: author,
+      year: year,
+      genre: genre,
+      review: review
+    };
+    return this.http.post(`${this.uri}/books/update/${id}`, book);
   }
 
   deleteBook(id) {

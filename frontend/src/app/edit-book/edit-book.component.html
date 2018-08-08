@@ -1,0 +1,2 @@
+<button routerLink="/home">Back</button>&nbsp;
+<button type="submit" (click)="updateBook(title.value, author.value, year.value, genre.value, review.value)" [disabled]="updateForm.pristine || updateForm.invalid">Save</button>

@@ -9,7 +9,7 @@ import { Book } from '../book';
 export class BookDetailsComponent implements OnInit {
   @Input() book: Book;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

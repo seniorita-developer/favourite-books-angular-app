@@ -10,6 +10,7 @@ import { BookDetailsComponent } from './book-details/book-details.component';
 import { BookService } from './book.service';
 import { AppRoutingModule } from './/app-routing.module';
 import { AddBookComponent } from './add-book/add-book.component';
+import { EditBookComponent } from './edit-book/edit-book.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AddBookComponent } from './add-book/add-book.component';
     AppComponent,
     BooksComponent,
     BookDetailsComponent,
-    AddBookComponent
+    AddBookComponent,
+    EditBookComponent
   ],
   imports: [
     BrowserModule,
