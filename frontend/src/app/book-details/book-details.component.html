@@ -1,13 +1,8 @@
 <div *ngIf="book">
-    <div>{{book.title | uppercase}}</div>
-    <div><span>Author: </span>{{book.author}}</div>
-    <div><span>Year: </span>{{book.year}}</div>
-    <div><span>Genre: </span>{{book.genre}}</div>
-    <div>
-      <label>Review:
-        <input [(ngModel)]="book.review" placeholder="my review">
-      </label>
-    
+  <div>{{book.title | uppercase}}</div>
+  <div><span>Author: </span>{{book.author}}</div>
+  <div><span>Year: </span>{{book.year}}</div>
+  <div><span>Genre: </span>{{book.genre}}</div>
+  <div>
+    <span>Review: </span>{{book.review}} </div>
 </div>
-
-

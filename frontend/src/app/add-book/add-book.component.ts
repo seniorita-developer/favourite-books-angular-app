@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-book.component.css']
 })
 export class AddBookComponent implements OnInit {
-  title = 'Add book';
+  header = 'Add book';
 
   addForm: FormGroup;
   constructor(private bookService: BookService, private fb: FormBuilder, private router: Router) {
