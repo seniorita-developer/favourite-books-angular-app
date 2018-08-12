@@ -10,7 +10,7 @@ import { BookService } from '../book.service';
   styleUrls: ['./edit-book.component.css']
 })
 export class EditBookComponent implements OnInit {
-
+  title = 'Edit information about book';
   id: String;
   book: any = {};
   updateForm: FormGroup;

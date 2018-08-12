@@ -11,7 +11,7 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/books');
+mongoose.connect('mongodb://localhost:27017/books', { useNewUrlParser: true });
 const connection = mongoose.connection;
 
 connection.once('open', () => {
@@ -24,6 +24,15 @@ router.route('/books').get((req, res) => {
             console.log(err)
         else
             res.json(books);
+    });
+});
+
+router.route('/books/:id').get((req, res) => {
+    Book.findById(req.params.id, (err, book) => {
+        if (err)
+            console.log(err);
+        else
+            res.json(book);
     });
 });
 

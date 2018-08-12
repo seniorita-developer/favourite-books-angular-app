@@ -1,6 +1,6 @@
 import { Book } from './book';
 
-export const BOOKS: Book[] = [
+const BOOKS: Book[] = [
     {
         title: 'Metro 2033',
         author: 'Gluchovsky',
